@@ -5,55 +5,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            margin: 200px;
+            text-align: center;
+        }
+
+        #calculator {
+            border: 7px solid rgb(24, 8, 89);
+            width: 200px;
+            margin: 0 auto;
+            background-color: rgb(124, 98, 98);
+            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+
+        .screen {
+            grid-column: span 4;
+            border: 2px solid rgb(180, 37, 37);
+            background-color: rgb(3, 3, 3);
+            color: rgb(248, 248, 248);
+            height: 35px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 5px;
+        }
+
+        .button {
+            width: 100%;
+            height: 45px;
+            background-color: transparent;
+            border: none;
+            color: rgb(248, 248, 248);
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .button.operator {
+            background-color: rgb(24, 8, 89);
+        }
+
+        .button.equal {
+            background-color: rgb(24, 8, 89);
+        }
+    </style>
 </head>
 
 <body>
-    <div style="border: 5px solid rgb(24, 8, 89);background-color: rgb(144, 219, 150); 
-        width: 400; 
-        margin: 200px auto;">
-        <div style="border: 2px solid rgb(180, 37, 37);background-color:  lightgray;
-             width: 200px; 
-             min-height: 30px; 
-             margin: 10px auto;">
-        </div>
-        <div>
-            <div style="float:left; margin:10px"><button class="but1">AC</button></div>
-            <div style="float:left; margin:10px"><button class="but1">DE</button></div>
-            <div style="float:left; margin:10px"><button class="but1">/</button></div>
-            <div style="float:left; margin:10px"><button class="but1">%</button></div>
-            <div style="clear:both; margin:10px"></div>
-        </div>
-        <div>
-            <div style="float:left; margin:10px"><button class="but1">7</button></div>
-            <div style="float:left; margin:10px"><button class="but1">8</button></div>
-            <div style="float:left; margin:10px"><button class="but1">9</button></div>
-            <div style="float:left; margin:10px"><button class="but1">*</button></div>
-            <div style="clear:both; margin:10px"></div>
-        </div>
+    <div id="calculator">
+        <div class="screen"></div>
 
-        <div>
-            <div style="float:left; margin:10px"><button class="but1">4</button></div>
-            <div style="float:left; margin:10px"><button class="but1">5</button></div>
-            <div style="float:left; margin:10px"><button class="but1">6</button></div>
-            <div style="float:left; margin:10px"><button class="but1">-</button></div>
-            <div style="clear:both; margin:10px"></div>
-        </div>
+        <button class="button operator">AC</button>
+        <button class="button operator">**</button>
+        <button class="button operator">%</button>
+        <button class="button operator">/</button>
 
-        <div>
-            <div style="float:left; margin:10px"><button class="but1">1</button></div>
-            <div style="float:left; margin:10px"><button class="but1">2</button></div>
-            <div style="float:left; margin:10px"><button class="but1">3</button></div>
-            <div style="float:left; margin:10px"><button class="but1">+</button></div>
-            <div style="clear:both; margin:10px"></div>
-        </div>
+        <button class="button">7</button>
+        <button class="button">8</button>
+        <button class="button">9</button>
+        <button class="button operator">*</button>
 
-        <div>
-            <div style="float:left; margin:10px"><button class="button">0</button></div>
-            <div style="float:left; margin:10px"><button class="but1">.</button></div>
-            <div style="float:left; margin:10px"><button class="but1">=</button></div>
-            <div style="clear:both; margin:10px"></div>
-        </div>
+        <button class="button">4</button>
+        <button class="button">5</button>
+        <button class="button">6</button>
+        <button class="button operator">-</button>
+
+        <button class="button">1</button>
+        <button class="button">2</button>
+        <button class="button">3</button>
+        <button class="button operator">+</button>
+
+        <button class="button" style="grid-column: span 2;">0</button>
+        <button class="button">.</button>
+        <button class="button equal">=</button>
     </div>
+
+    <!-- special scripts for integration in App Gallery - must be placed at the bottom of the HTML after your code -->
+    <script>
+        // custom config for the MTW app 
+        const mtwAppConfig = {
+            border: true // app border in the MTW page                    
+        }
+
+        // implement these functions in order to use private API        
+        const sendPrivateApiRequest = async () => {
+            // your code here:
+            // sendRequestToParent({ cat: 'getAssets' })
+        }
+
+        const acceptPrivateApiResponse = async (data) => {
+            // process received data here:
+            // console.log(data)
+        }
+
+        // use this in order to send on document load
+        document.addEventListener('DOMContentLoaded', () => {
+            // your code here:
+            // sendRequestToParent({ method: 'getAssets' })
+        })
+    </script>
+    <script src="https://morethanwallet.com/appstore/index.js"></script>
 </body>
 
 </html>
