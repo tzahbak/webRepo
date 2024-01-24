@@ -138,8 +138,12 @@ function calculateFac(n) {
     return n === 0 || n === 1 ? 1 : n * calculateFac(n - 1);
 }
 
-/* special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code */
+// lert for non-functional buttons
+function showNotFunctionalMessage() {
+    alert("Non-functional button.");
+}
 
+/* special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code */
 // custom config for the MTW app 
 const mtwAppConfig = {
     border: true // app border in the MTW page                    
