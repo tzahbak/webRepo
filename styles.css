@@ -6,7 +6,7 @@ body {
 
 .calculator {
     width: 450px;
-    margin: 40px auto;
+    margin: 20px auto;
     padding: 10px;
     border-style: solid;
     display: flex;
